@@ -2,10 +2,10 @@
 
 Develop an API for a manufacturing-related application using .NET 8: one using a RESTful approach. The application has the following models:
 
-- RawMaterial
-- Supplier
-- Recipe
-- Product
+- RawMaterial: Name, Description
+- Supplier: Name, Description, Price for each associated RawMaterial
+- Recipe: Name, Description
+- Product: Name, Description, Selling Price
 
 ### Relationships:
 
@@ -14,12 +14,6 @@ Each supplier provides its own price for the raw materials it supplies.
 
 Hint: you should use EnttyFrameworCore to handle DB migrations, model relationships, queries, etc.
 
-### Data Requirements:
-
-RawMaterial: Name, Description
-Supplier: Name, Description, Price for each associated RawMaterial
-Recipe: Name, Description
-Product: Name, Description, Selling Price
 
 ### Implement REST API:
 

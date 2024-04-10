@@ -9,11 +9,9 @@ Develop an API for a manufacturing-related application using .NET 8: using a RES
 
 ### Relationships:
 
-A Recipe has one or more products and requires specific raw materials supplied by one or more suppliers.
-Each supplier provides its own price for the raw materials it supplies.
-Each recpe defines the quantity it needs of the raw materials and the quantity it creates of each product.
+A Recipe has one or more products and requires specific raw materials supplied by one or more suppliers. Each supplier provides its own price for the raw materials it supplies. Each recipe defines the quantity it needs of the raw materials and the quantity it creates of each product.
 
-Hint: you should use Entity Framework Core to handle DB migrations, model relationships, queries, etc.
+Hint: Utilize Entity Framework Core to handle DB migrations, model relationships etc. Use LINQ to perform queries.
 
 ### Recipe example:
 
@@ -34,7 +32,7 @@ Hint: you should use Entity Framework Core to handle DB migrations, model relati
 #### Quantities:
 
 - Catalyst: 1 unit
-- Ethylene Oxide: 5-10 units per Lauryl Alcohol
+- Ethylene Oxide: 5-10 units
 - Lauryl Alcohol: 1 unit
 - Alcohol Ethoxylate: 1 unit
 - Dioxane: 0.2 units

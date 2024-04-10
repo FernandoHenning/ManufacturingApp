@@ -1,6 +1,6 @@
 # ManufacturingApp
 
-Develop an API for a manufacturing-related application using .NET 8: one using a RESTful approach. The application has the following models:
+Develop an API for a manufacturing-related application using .NET 8: using a RESTful approach. The application has the following models:
 
 - RawMaterial: Name, Description
 - Supplier: Name, Description, Price for each associated RawMaterial
@@ -12,7 +12,7 @@ Develop an API for a manufacturing-related application using .NET 8: one using a
 A Recipe has one or more products and requires specific raw materials supplied by one or more suppliers.
 Each supplier provides its own price for the raw materials it supplies.
 
-Hint: you should use EnttyFrameworCore to handle DB migrations, model relationships, queries, etc.
+Hint: you should use Entity Framework Core to handle DB migrations, model relationships, queries, etc.
 
 
 ### Implement REST API:

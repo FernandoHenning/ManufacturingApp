@@ -32,10 +32,22 @@ Hint: Utilize Entity Framework Core to handle DB migrations, model relationships
 #### Quantities:
 
 - Catalyst: 1 unit
-- Ethylene Oxide: 5-10 units
+- Ethylene Oxide: 5 units
 - Lauryl Alcohol: 1 unit
 - Alcohol Ethoxylate: 1 unit
 - Dioxane: 0.2 units
+
+#### Suppliers:
+
+- ABC Chemicals
+	- Catalyst: $10 per unit
+	- Ethylene Oxide: $20 per unit
+	- Lauryl Alcohol: $15 per unit
+
+- XYZ Corporation
+	- Catalyst: $12 per unit
+	- Ethylene Oxide: $18 per unit
+	- Lauryl Alcohol: $17 per unit
 
 
 ### Implement REST API:
@@ -43,6 +55,14 @@ Hint: Utilize Entity Framework Core to handle DB migrations, model relationships
 Define the necessary models (RawMaterial, Supplier, Recipe, Product) with appropriate properties and relationships.
 Create RESTful endpoints for CRUD operations for each model.
 Ensure that endpoints handle proper validation and error responses.
+
+### Additional Endpoints:
+
+1. OptimizeSuppliers Endpoint:
+	- Description: This endpoint calculates the optimal combination of suppliers for a given recipe to minimize the total cost of ingredients.
+	- Parameters:
+		- recipeId: The ID of the recipe for which the optimal suppliers need to be determined.
+	- Response: A list of suppliers along with their respective prices for each raw material required in the recipe, forming the optimal combination to minimize the total cost.
 
 ### Submission:
 

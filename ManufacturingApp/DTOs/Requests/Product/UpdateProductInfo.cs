@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ManufacturingApp.Requests.Product;
+namespace ManufacturingApp.DTOs.Requests.Product;
 
 public record UpdateProductInfo(
     [Required] int Id,

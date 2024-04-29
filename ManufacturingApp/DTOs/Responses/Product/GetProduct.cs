@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ManufacturingApp.Responses.Product;
+namespace ManufacturingApp.DTOs.Responses.Product;
 
 public record GetProduct(
     [Required] int Id,

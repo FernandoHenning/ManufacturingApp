@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ManufacturingApp.Responses.RawMaterial;
+namespace ManufacturingApp.DTOs.Responses.RawMaterial;
 
 public record GetRawMaterials([Required] List<GetRawMaterial> RawMaterials);

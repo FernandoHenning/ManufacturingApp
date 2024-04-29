@@ -1,69 +1,41 @@
-# ManufacturingApp
+# ManufacturingApp API
 
-Develop an API for a manufacturing-related application using .NET 8: using a RESTful approach. The application has the following models:
+ManufacturingApp is an API developed using .NET 8 with a RESTful approach for a manufacturing-related application. It manages models like RawMaterial, Supplier, Recipe, and Product, along with their relationships.
 
-- RawMaterial: Name, Description
-- Supplier: Name, Description, Price for each associated RawMaterial
-- Recipe: Name, Description, Quantities for each RawMaterial and Product
-- Product: Name, Description, Selling Price
+## Installation
+1. Clone the repository to your local machine using `git clone`.
+2. Open the project in your preferred IDE (e.g., Visual Studio, Visual Studio Code).
+3. Ensure you have .NET 8 installed on your machine.
+4. Restore the required NuGet packages by running `dotnet restore` in the project root directory.
 
-### Relationships:
+## Configuration
+Before running the application, you need to configure the database connection string in the `appsettings.json` file:
+```
+{
+  "ConnectionStrings": 
+    "ManufacturingDatabase": "Host=<host>; Database=Manufacturing; Username=<user>; Password=<password>"
+  }
+}
+```
+Replace `<host>`, `<user>` and `<password>` with your PostgreSQL server details.
 
-A Recipe has one or more products and requires specific raw materials supplied by one or more suppliers. Each supplier provides its own price for the raw materials it supplies. Each recipe defines the quantity it needs of the raw materials and the quantity it creates of each product.
+## Usage
+1. Build the soluction using you IDE or run `dotnet build` in the project root directory.
+2. Run the migrations to create the database schema using Entity Framework Core: `dotnet ef database update`.
+3. Start the API by running `dotnet run` in the project root directory.
+4. The API will be accesible at `http://localhost:5138` or `https://localhost:7082` if running with HTTPS.
 
-Hint: Utilize Entity Framework Core to handle DB migrations, model relationships etc. Use LINQ to perform queries.
+## Endpoints
+The API provides the following endpoints:
 
-### Recipe example:
+- GET /api/resource: Retrieves all resources.
+- GET /api/resource/{id}: Retrieves a specific resource by ID.
+- POST /api/resource: Creates a new resource.
+- PUT /api/resource/{id}: Updates an existing resource.
+- DELETE /api/resource/{id}: Deletes a resource by ID.
 
-- Name: Alcohol Ethoxylate Production
-- Description: This recipe outlines the production process for Alcohol Ethoxylate, a common form of nonionic surfactant.
+Replace resource with the name of the resource entity.
 
-#### Raw Materials:
-
-- Catalyst
-- Ethylene Oxide
-- Lauryl Alcohol
-
-#### Products:
-
-- Alcohol Ethoxylate
-- Dioxane
-
-#### Quantities:
-
-- Catalyst: 1 unit
-- Ethylene Oxide: 5 units
-- Lauryl Alcohol: 1 unit
-- Alcohol Ethoxylate: 1 unit
-- Dioxane: 0.2 units
-
-#### Suppliers:
-
-- ABC Chemicals
-	- Catalyst: $10 per unit
-	- Ethylene Oxide: $20 per unit
-	- Lauryl Alcohol: $15 per unit
-
-- XYZ Corporation
-	- Catalyst: $12 per unit
-	- Ethylene Oxide: $18 per unit
-	- Lauryl Alcohol: $17 per unit
-
-
-### Implement REST API:
-
-Define the necessary models (RawMaterial, Supplier, Recipe, Product) with appropriate properties and relationships.
-Create RESTful endpoints for CRUD operations for each model.
-Ensure that endpoints handle proper validation and error responses.
-
-### Additional Endpoints:
-
-1. OptimizeSuppliers Endpoint:
-	- Description: This endpoint calculates the optimal combination of suppliers for a given recipe to minimize the total cost of ingredients.
-	- Parameters:
-		- recipeId: The ID of the recipe for which the optimal suppliers need to be determined.
-	- Response: A list of suppliers along with their respective prices for each raw material required in the recipe, forming the optimal combination to minimize the total cost.
-
-### Submission:
-
-Provide the source code of the project along with any necessary instructions for setting up and running the APIs within a GitHub repository.
+## Additional Endpoints
+- GET /Recipes/OptimizeSuppliers/{recipeId}: Calculates the optimal combination of suppliers for a given recipe to minimize the total cost of ingredients.
+- POST /Suppliers/AddRawMaterial: Adds a new raw material to the supplier inventory.
